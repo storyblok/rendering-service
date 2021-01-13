@@ -1,0 +1,13 @@
+{{blok._editable}}
+<div class="intro {% if forloop.index == 1 and gated_body != true %}intro--first{% endif%} {% if blok.is_centered or blok.component == 'wave_centered' %}intro--centered{% endif%} {% if blok.is_in_medium_container %}intro--medium-container{% endif%} {% if blok.ctas.size > 0%}intro--has-cta{% endif %}">
+  {% if blok.top_image.filename != blank %}<img class="intro__top-image" src="{{blok.top_image.filename}}" alt="{{blok.top_image_alt}}">{% endif %}
+  {% if blok.headline != blank %}
+    {% if forloop.index == 1 and gated_body != true %}
+    <h1 class="intro__h">{{blok.headline}}</h1>
+    {% else %}
+    <h2 class="intro__h js-jumplink">{{blok.headline}}</h2>
+    {% endif %}
+  {% endif %}
+  {% if blok.text != blank %}<div class="intro__t {% if blok.has_wider_text %}intro__t--wide{% endif%}">{{blok.text|markdown}}</div>{% endif %}
+  {% include 'button_group' with { ctas: blok.ctas } only %}
+</div>

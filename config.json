@@ -1,0 +1,11 @@
+{
+  "storyblok": {
+    "PRIVATE_MANAGEMENT_TOKEN": "",
+    "spaceId": "INSERT_SPACE_ID",
+    "domain": "INSERT_YOUR_DOMAIN",
+    "themeToken": "INSERT_TOKEN",
+    "environment": "dev",
+    "debug": false
+  }
+}
+

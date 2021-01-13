@@ -1,0 +1,26 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Rendering Service</title>
+
+    {% if proxy_mode %}
+      <link href="{{ 'above.css' | asset_url }}" rel="stylesheet">
+    {% else %}
+      <style type="text/css">{% include 'css_above' %}</style>
+    {% endif %}
+  </head>
+
+  <body>
+    <h1>This is a 404 Page</h1>
+  
+    {% if proxy_mode %}
+      <script defer type="text/javascript" src="{{ 'bundle.js' | asset_url }}"></script>
+    {% else %}
+      <script defer type="text/javascript" src="{{ 'bundle.min.js' | asset_url }}"></script>
+    {% endif %}
+  </body>
+</html>
+{% endspaceless %}
